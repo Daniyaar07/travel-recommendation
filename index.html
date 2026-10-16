@@ -128,7 +128,25 @@ nav button:hover {
                     surrounded by cliffs.</p>
                 </div>
             `;
-        } else {
+            
+        } 
+else if (search.includes("temple")) {
+    results.innerHTML = `
+        <div class="place">
+            <img src="https://images.unsplash.com/photo-1545569341-9eb8b30979d9" alt="Japanese Temple">
+            <h2>Senso-ji Temple</h2>
+            <p>A famous Buddhist temple in Tokyo, Japan.</p>
+        </div>
+
+        <div class="place">
+            <img src="https://images.unsplash.com/photo-1528181304800-259b08848526" alt="Thai Temple">
+            <h2>Wat Arun</h2>
+            <p>A beautiful Buddhist temple in Bangkok, Thailand.</p>
+        </div>
+    `;
+}
+
+else {
             results.innerHTML = "<p>No recommendations found.</p>";
         }
     }
