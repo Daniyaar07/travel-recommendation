@@ -51,6 +51,30 @@ nav button:hover {
     background-color: #dddddd;
 }
 
+#results {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+.place {
+    background: white;
+    width: 300px;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px #cccccc;
+}
+
+.place img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+
     </style>
 </head>
 <body>
@@ -73,6 +97,7 @@ nav button:hover {
 </nav>
 
     <main>
+<div id="results"></div>
         <h1>Welcome to Travel Recommendation</h1>
         <p>Discover beautiful destinations around the world.</p>
         <p>Explore beaches, temples, and countries for your next trip.</p>
@@ -80,12 +105,36 @@ nav button:hover {
     
 <script>
     function searchPlaces() {
-        const search = document.getElementById("searchInput").value;
-        alert("Searching for: " + search);
-    }
+        const search = document.getElementById("searchInput")
+            .value.toLowerCase().trim();
 
+        const results = document.getElementById("results");
+
+        if (search.includes("beach")) {
+            results.innerHTML = `
+                <div class="place">
+                    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e"
+                         alt="Tropical beach">
+                    <h2>Whitehaven Beach</h2>
+                    <p>A beautiful beach in Australia,
+                    famous for its white sand.</p>
+                </div>
+
+                <div class="place">
+                    <img src="https://images.unsplash.com/photo-1473116763249-2faaef81ccda"
+                         alt="Beach destination">
+                    <h2>Navagio Beach</h2>
+                    <p>A famous beach in Greece,
+                    surrounded by cliffs.</p>
+                </div>
+            `;
+        } else {
+            results.innerHTML = "<p>No recommendations found.</p>";
+        }
+    }
     function clearSearch() {
         document.getElementById("searchInput").value = "";
+        document.getElementById("results").innerHTML = "";
     }
 </script>
 
