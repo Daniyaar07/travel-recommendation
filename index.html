@@ -23,20 +23,72 @@
             text-align: center;
             padding: 80px 20px;
         }
+        
+nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+nav input {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-left: auto;
+}
+
+nav button {
+    padding: 10px 15px;
+    background-color: white;
+    color: #234e70;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+nav button:hover {
+    background-color: #dddddd;
+}
+
     </style>
 </head>
 <body>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About Us</a>
-        <a href="contact.html">Contact Us</a>
-    </nav>
+    
+<nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="contact.html">Contact Us</a>
+
+    <input type="text" id="searchInput"
+           placeholder="Search destinations">
+
+    <button type="button" onclick="searchPlaces()">
+        Search
+    </button>
+
+    <button type="button" onclick="clearSearch()">
+        Clear
+    </button>
+</nav>
 
     <main>
         <h1>Welcome to Travel Recommendation</h1>
         <p>Discover beautiful destinations around the world.</p>
         <p>Explore beaches, temples, and countries for your next trip.</p>
     </main>
+    
+<script>
+    function searchPlaces() {
+        const search = document.getElementById("searchInput").value;
+        alert("Searching for: " + search);
+    }
+
+    function clearSearch() {
+        document.getElementById("searchInput").value = "";
+    }
+</script>
+
 </body>
 </html>
 
