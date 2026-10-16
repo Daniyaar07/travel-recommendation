@@ -146,6 +146,24 @@ else if (search.includes("temple")) {
     `;
 }
 
+else if (search.includes("country")) {
+    results.innerHTML = `
+        <div class="place">
+            <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e" alt="Japan">
+            <h2>Japan</h2>
+            <p>Japan is famous for its temples,
+            beautiful nature, and modern cities.</p>
+        </div>
+
+        <div class="place">
+            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee" alt="Italy">
+            <h2>Italy</h2>
+            <p>Italy is known for its history,
+            architecture, food, and beautiful landscapes.</p>
+        </div>
+    `;
+}
+
 else {
             results.innerHTML = "<p>No recommendations found.</p>";
         }
